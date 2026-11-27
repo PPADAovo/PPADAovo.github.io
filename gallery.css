@@ -7,7 +7,7 @@ html{overflow-x:clip}
 
 /* 슬라이드: 화면 전체 폭을 쓰는 가로 스크롤. 가운데 카드만 선명하고 양옆은 흐리게 */
 .project-gallery{width:100vw;margin-left:calc(50% - 50vw)}
-.deck{--w:min(86vw,1500px);position:relative;display:flex;gap:clamp(12px,2vw,28px);overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;padding:10px calc((100vw - var(--w))/2) 36px;scrollbar-width:none;cursor:grab;outline-offset:-4px;user-select:none;-webkit-user-select:none}
+.deck{--w:min(86vw,1500px);position:relative;display:flex;gap:clamp(12px,2vw,28px);overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;padding:10px calc((100vw - var(--w))/2) 36px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);cursor:grab;outline-offset:-4px;user-select:none;-webkit-user-select:none}
 .deck::-webkit-scrollbar{display:none}
 .deck.dragging{scroll-snap-type:none;cursor:grabbing}
 .slide{flex:0 0 var(--w);min-width:0;height:clamp(300px,68vh,760px);scroll-snap-align:center;display:flex;flex-direction:column;padding:0;text-align:left;font:inherit;color:inherit;background:white;border:2px solid #d1d8e0;border-radius:18px;overflow:hidden;box-shadow:0 14px 30px #18212819;opacity:.4;filter:blur(4px);transform:scale(.96);transition:opacity .4s,filter .4s,transform .4s,border-color .4s;cursor:pointer}
