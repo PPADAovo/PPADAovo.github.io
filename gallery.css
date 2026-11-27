@@ -5,17 +5,15 @@ html{overflow-x:clip}
 .hero h1{font-size:clamp(30px,4.4vw,58px);word-break:keep-all}
 .intro{max-width:none;margin:12px 0 0}
 
-/* 슬라이드: 화면 전체 폭을 쓰는 가로 스크롤. 가운데 카드만 선명하고 양옆은 흐리게 */
-.project-gallery{width:100vw;margin-left:calc(50% - 50vw)}
-.deck{--w:min(86vw,1500px);position:relative;display:flex;gap:clamp(12px,2vw,28px);overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;padding:10px calc((100vw - var(--w))/2) 36px;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);cursor:grab;outline-offset:-4px;user-select:none;-webkit-user-select:none}
-.deck::-webkit-scrollbar{display:none}
-.deck.dragging{scroll-snap-type:none;cursor:grabbing}
-.slide{flex:0 0 var(--w);min-width:0;height:clamp(300px,68vh,760px);scroll-snap-align:center;display:flex;flex-direction:column;padding:0;text-align:left;font:inherit;color:inherit;background:white;border:2px solid #d1d8e0;border-radius:18px;overflow:hidden;box-shadow:0 14px 30px #18212819;opacity:.4;filter:blur(4px);transform:scale(.96);transition:opacity .4s,filter .4s,transform .4s,border-color .4s;cursor:pointer}
-.slide.active{opacity:1;filter:none;transform:none;border-color:#2356de}
-.slide img{width:100%;flex:1 1 auto;min-height:0;object-fit:cover;display:block;pointer-events:none}
-.slide-copy{flex:0 0 auto;padding:16px 26px 20px}
-.slide-copy strong{display:block;font-size:clamp(21px,2.4vw,30px);letter-spacing:-.7px}
+/* 슬라이드: 화면 전체 폭을 바탕으로 쓰는 3D 카드 덱. 화면 밖으로 잘릴 카드는 스크립트가 숨긴다 */
+.project-gallery{width:100vw;margin-left:calc(50% - 50vw);overflow:hidden}
+.deck{--w:clamp(270px,46vw,720px);height:calc(var(--w)*.76 + 70px);position:relative;perspective:1600px;touch-action:pan-y;outline-offset:-5px;isolation:isolate}
+.slide{position:absolute;left:50%;top:28px;width:var(--w);height:calc(var(--w)*.76);margin-left:calc(var(--w)/-2);background:white;border:1px solid #d1d8e0;border-radius:15px;overflow:hidden;text-align:left;padding:0;display:flex;flex-direction:column;transition:transform .48s cubic-bezier(.22,.8,.25,1),opacity .35s,filter .35s;box-shadow:0 14px 30px #18212819;transform-origin:center;will-change:transform}
+.slide img{width:100%;flex:1 1 auto;min-height:0;object-fit:cover;display:block}
+.slide-copy{flex:0 0 auto;padding:16px 24px 20px}
+.slide-copy strong{display:block;font-size:clamp(21px,2.4vw,28px);letter-spacing:-.7px}
 .slide-copy span{font-size:14px;color:#56616d}
+.slide.active{border:2px solid #2356de}
 
 /* 아래 목록: 프로젝트 하나가 한 줄, 사진은 왼쪽 */
 .section-head{padding-top:30px;margin-bottom:18px}
@@ -50,8 +48,7 @@ a.chan:hover{border-color:var(--blue);color:var(--blue)}
   .card .cardfoot{justify-content:flex-start}
 }
 @media(max-width:540px){
-  .deck{--w:88vw}
-  .slide{height:clamp(280px,58vh,560px)}
+  .deck{--w:clamp(250px,74vw,720px)}
   .detail-cover{height:180px}
 }
 @media(prefers-reduced-motion:reduce){.slide,.card,.chan,.contact-list,.contact-toggle{transition:none}}
