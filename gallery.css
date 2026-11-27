@@ -86,6 +86,13 @@ h2{font-size:32px;word-break:keep-all}
 .slide.active{border:2px solid var(--blue)}
 .slide-copy{padding:16px 24px 24px}
 .slide-copy span{color:var(--muted)}
+/* 이름 칸은 사진 위에 얹은 반투명 유리. 옆 카드는 가운데 카드에 가려지지 않는 바깥쪽에 이름을 둔다 */
+.slide img{position:absolute;inset:0;width:100%;height:100%;transition:filter .35s}
+.slide-copy{position:absolute;left:0;right:0;bottom:0;background:rgba(255,255,255,.58);-webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);border-top:1px solid rgba(255,255,255,.6)}
+.slide-copy span{color:#3f4650}
+.slide.prev .slide-copy{padding-right:62%}
+.slide.next .slide-copy{padding-left:62%;text-align:right}
+.slide.prev .slide-copy strong,.slide.next .slide-copy strong{font-size:20px;word-break:keep-all}
 
 /* 프로젝트 목록 */
 .section-head{padding-top:88px;margin-bottom:24px}
@@ -120,6 +127,13 @@ h2{font-size:32px;word-break:keep-all}
 .stack-cell h3{margin:0 0 8px;font-size:14px;font-weight:600;color:var(--muted)}
 .stack-cell h3:not(:first-child){margin-top:24px}
 .about .stack-cell p{color:var(--ink)}
+.profile-cell{grid-column:span 2}
+.profile-cell.wide{grid-column:1/-1}
+.profile-cell h3{margin:0 0 16px;font-size:14px;font-weight:600;color:var(--muted)}
+.profile-cell ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.profile-cell li{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.profile-cell li b{font-weight:600}
+.profile-cell li span{color:var(--muted);font-size:14px;white-space:nowrap}
 
 /* 연락 */
 .contact{padding:64px 0 72px}
@@ -145,6 +159,7 @@ dialog::backdrop{background:rgba(0,0,0,.45)}
   .thumb{width:96px;height:64px}
   .about{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:64px;padding:48px 0}
   .intro-cell{grid-row:auto}
+  .profile-cell{grid-column:1/-1}
 }
 @media(max-width:540px){
   .wrap{padding:0 24px}
