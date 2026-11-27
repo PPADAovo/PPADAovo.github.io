@@ -13,9 +13,11 @@ app.js: 프로젝트 목록, 검색, 분류, 상세창
  gallery.js: 이미지 카드 슬라이드, 마우스·스와이프·키보드 처리
  gallery.css: 슬라이드와 이미지 스타일
  default-cover.svg: 대표 이미지가 없을 때 표시하는 기본 이미지
+ records.js: 수상경력·자격증 목록, 메뉴 강조, 스크롤 등장 효과
 
 수정
 app.js의 projects 배열에서 이름, 설명, 기능, 기술, 링크를 수정하세요.
+수상경력과 자격증은 records.js의 awards, certs 배열에 항목을 추가하세요.
 대표 이미지를 지정하려면 해당 프로젝트에 cover: 'images/calendar.jpg' 같은 속성을 추가하고,
 그 경로에 이미지 파일을 넣으세요. 없으면 기본 이미지가 표시됩니다.
 
