@@ -137,6 +137,8 @@ h2{font-size:32px;word-break:keep-all}
 .profile-cell li{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
 .profile-cell li b{font-weight:600}
 .profile-cell li span{color:var(--muted);font-size:14px;white-space:nowrap}
+.profile-cell li b{word-break:keep-all}
+.profile-cell li small{display:block;margin-top:4px;font-size:14px;font-weight:400;color:var(--muted)}
 
 /* 연락 */
 .contact{padding:64px 0 72px}

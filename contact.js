@@ -11,12 +11,12 @@ contactToggle.addEventListener('click',()=>setContact(contactToggle.getAttribute
 setContact(false);
 // 소개 칸의 수치는 프로젝트 목록에서 계산한다.
 document.querySelector('#statProjects').textContent=projects.length;document.querySelector('#statLive').textContent=projects.filter(p=>p.live).length;
-// 자기소개 칸: items에 ['내용','기간이나 날짜'] 형태로 적는다. 비어 있는 칸은 화면에 나오지 않는다.
+// 자기소개 칸: items에 ['내용','기간이나 날짜','상세 설명(선택)'] 형태로 적는다. 비어 있는 칸은 화면에 나오지 않는다.
 const profile=[
 {title:'학력',items:[['청주대학교 신소재화학과','2023 – 현재']]},
 {title:'교외활동',items:[]},
 {title:'자격증',items:[]},
-{title:'수상',items:[]}
+{title:'수상',items:[['지역기업 발굴 및 가치창출 프로그램 명칭 공모전 최우수상','2023-04-24',"청주대학교 대학혁신사업단 · 수상작 '찾아보기UP' ('찾아보기'와 'UP'을 합친 이름)"]]}
 ];
 const filled=profile.filter(g=>g.items.length),about=document.querySelector('#about');
-filled.forEach(g=>{const cell=document.createElement('article');cell.className='cell profile-cell'+(filled.length===1?' wide':'');const h=document.createElement('h3');h.textContent=g.title;const ul=document.createElement('ul');g.items.forEach(([text,when])=>{const li=document.createElement('li'),b=document.createElement('b');b.textContent=text;li.append(b);if(when){const t=document.createElement('span');t.textContent=when;li.append(t)}ul.append(li)});cell.append(h,ul);about.append(cell)});
+filled.forEach(g=>{const cell=document.createElement('article');cell.className='cell profile-cell'+(filled.length===1?' wide':'');const h=document.createElement('h3');h.textContent=g.title;const ul=document.createElement('ul');g.items.forEach(([text,when,detail])=>{const li=document.createElement('li'),b=document.createElement('b');b.textContent=text;if(detail){const d=document.createElement('small');d.textContent=detail;b.append(d)}li.append(b);if(when){const t=document.createElement('span');t.textContent=when;li.append(t)}ul.append(li)});cell.append(h,ul);about.append(cell)});
