@@ -53,50 +53,53 @@ a.chan:hover{border-color:var(--blue);color:var(--blue)}
 }
 @media(prefers-reduced-motion:reduce){.slide,.card,.chan,.contact-list,.contact-toggle{transition:none}}
 
-/* 다크 테마: 어두운 바탕, 1px 반투명 테두리, 넉넉한 여백. 강조색은 채도를 낮춰 한 곳에만 쓴다 */
-:root{--bg:#0c0e11;--surface:#14171b;--ink:#eceef1;--muted:#8d96a2;--line:rgba(255,255,255,.1);--blue:#a9bbdf;color-scheme:dark}
+/* 화이트 앤 블랙: 흰 바탕, 검정 글자, 1px 반투명 테두리, 넉넉한 여백. 색은 쓰지 않는다 */
+:root{--bg:#ffffff;--surface:#ffffff;--ink:#0a0a0a;--muted:#6f6f6f;--line:rgba(0,0,0,.1);--blue:#0a0a0a;color-scheme:light}
 body{background:var(--bg);color:var(--ink)}
 header{background:var(--bg)}
-a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--blue)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--ink)}
 .wrap{padding:0 40px}
 .hero{padding:88px 0 36px}
 .hero h1{letter-spacing:-2px;font-weight:700}
-.hero h1 em{color:var(--muted)}
+.hero h1 em{color:#9a9a9a}
 .intro{margin-top:18px;color:var(--muted)}
 .eyebrow{color:var(--muted)}
-.brand span{color:var(--muted)}
+.brand span{color:#9a9a9a}
 
 .deck{height:calc(var(--w)*.76 + 90px)}
-.slide{top:36px;background:var(--surface);border:1px solid rgba(255,255,255,.12);box-shadow:0 20px 50px rgba(0,0,0,.45)}
-.slide.active{border:1px solid rgba(255,255,255,.38)}
+.slide{top:36px;background:var(--surface);border:1px solid rgba(0,0,0,.12);box-shadow:0 18px 44px rgba(0,0,0,.08)}
+.slide.active{border:1px solid rgba(0,0,0,.6)}
 .slide-copy{padding:20px 28px 24px}
 .slide-copy span{color:var(--muted)}
 
 .section-head{padding-top:88px;margin-bottom:26px}
-.search{background:rgba(255,255,255,.04);color:var(--ink)}
-.search::placeholder{color:var(--muted)}
+.search{background:var(--surface);color:var(--ink)}
+.search::placeholder{color:#9a9a9a}
 .filter{color:var(--ink)}
-.filter.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.grid{background:rgba(255,255,255,.025)}
+.filter.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{background:var(--surface)}
 .card{padding:18px 24px 18px 18px;gap:24px}
-.card:hover{background:rgba(255,255,255,.045)}
+.card:hover{background:rgba(0,0,0,.025)}
 .card .tags{color:var(--muted)}
-.badge{background:rgba(255,255,255,.06);color:var(--muted)}
-.badge.live{background:rgba(140,210,170,.1);color:#a5d6b7}
+.badge{background:rgba(0,0,0,.05);color:var(--muted)}
+.badge.live{background:var(--ink);color:#fff}
+.cardfoot button{color:var(--muted)}
 .cardfoot a{color:var(--ink)}
 
 .about{margin-top:110px;padding:64px 0}
 .contact{padding:64px 0 72px}
-.contact-toggle{color:var(--bg);background:var(--ink)}
-.contact-toggle[aria-expanded="true"]{color:var(--ink);background:transparent;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
-.chan{background:rgba(255,255,255,.04);color:var(--ink)}
-.chan.off{color:var(--muted)}
+.contact-toggle{color:#fff;background:var(--ink)}
+.contact-toggle[aria-expanded="true"]{color:var(--ink);background:transparent;box-shadow:inset 0 0 0 1px rgba(0,0,0,.4)}
+.chan{background:var(--surface);color:var(--ink)}
+a.chan:hover{border-color:var(--ink);color:var(--ink)}
+.chan.off{color:#9a9a9a}
 footer{padding:28px 0 44px}
 
-dialog{background:var(--surface);border:1px solid rgba(255,255,255,.14);padding:40px}
-dialog::backdrop{background:rgba(0,0,0,.6)}
-.close{background:rgba(255,255,255,.08);color:var(--ink)}
-.detail-status{background:rgba(255,255,255,.05)}
+dialog{background:var(--surface);border:1px solid rgba(0,0,0,.14);padding:40px}
+dialog::backdrop{background:rgba(0,0,0,.45)}
+.close{background:rgba(0,0,0,.06);color:var(--ink)}
+.detail-status{background:rgba(0,0,0,.04)}
+.url{color:var(--ink)}
 .skip:focus{background:var(--surface)}
 
 @media(max-width:800px){.card{padding:16px}.hero{padding:56px 0 24px}.section-head{padding-top:56px}}
