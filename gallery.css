@@ -52,3 +52,52 @@ a.chan:hover{border-color:var(--blue);color:var(--blue)}
   .detail-cover{height:180px}
 }
 @media(prefers-reduced-motion:reduce){.slide,.card,.chan,.contact-list,.contact-toggle{transition:none}}
+
+/* 다크 테마: 어두운 바탕, 1px 반투명 테두리, 넉넉한 여백. 강조색은 채도를 낮춰 한 곳에만 쓴다 */
+:root{--bg:#0c0e11;--surface:#14171b;--ink:#eceef1;--muted:#8d96a2;--line:rgba(255,255,255,.1);--blue:#a9bbdf;color-scheme:dark}
+body{background:var(--bg);color:var(--ink)}
+header{background:var(--bg)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--blue)}
+.wrap{padding:0 40px}
+.hero{padding:88px 0 36px}
+.hero h1{letter-spacing:-2px;font-weight:700}
+.hero h1 em{color:var(--muted)}
+.intro{margin-top:18px;color:var(--muted)}
+.eyebrow{color:var(--muted)}
+.brand span{color:var(--muted)}
+
+.deck{height:calc(var(--w)*.76 + 90px)}
+.slide{top:36px;background:var(--surface);border:1px solid rgba(255,255,255,.12);box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.slide.active{border:1px solid rgba(255,255,255,.38)}
+.slide-copy{padding:20px 28px 24px}
+.slide-copy span{color:var(--muted)}
+
+.section-head{padding-top:88px;margin-bottom:26px}
+.search{background:rgba(255,255,255,.04);color:var(--ink)}
+.search::placeholder{color:var(--muted)}
+.filter{color:var(--ink)}
+.filter.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{background:rgba(255,255,255,.025)}
+.card{padding:18px 24px 18px 18px;gap:24px}
+.card:hover{background:rgba(255,255,255,.045)}
+.card .tags{color:var(--muted)}
+.badge{background:rgba(255,255,255,.06);color:var(--muted)}
+.badge.live{background:rgba(140,210,170,.1);color:#a5d6b7}
+.cardfoot a{color:var(--ink)}
+
+.about{margin-top:110px;padding:64px 0}
+.contact{padding:64px 0 72px}
+.contact-toggle{color:var(--bg);background:var(--ink)}
+.contact-toggle[aria-expanded="true"]{color:var(--ink);background:transparent;box-shadow:inset 0 0 0 1px rgba(255,255,255,.3)}
+.chan{background:rgba(255,255,255,.04);color:var(--ink)}
+.chan.off{color:var(--muted)}
+footer{padding:28px 0 44px}
+
+dialog{background:var(--surface);border:1px solid rgba(255,255,255,.14);padding:40px}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+.close{background:rgba(255,255,255,.08);color:var(--ink)}
+.detail-status{background:rgba(255,255,255,.05)}
+.skip:focus{background:var(--surface)}
+
+@media(max-width:800px){.card{padding:16px}.hero{padding:56px 0 24px}.section-head{padding-top:56px}}
+@media(max-width:540px){.wrap{padding:0 20px}.about{margin-top:64px;padding:44px 0}}
