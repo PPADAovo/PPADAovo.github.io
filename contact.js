@@ -9,3 +9,5 @@ contacts.forEach((c,i)=>{const el=document.createElement(c.url?'a':'span');el.cl
 function setContact(open){contactToggle.setAttribute('aria-expanded',String(open));contactToggle.textContent=open?'닫기':'연락하기';contactList.classList.toggle('open',open);contactList.inert=!open}
 contactToggle.addEventListener('click',()=>setContact(contactToggle.getAttribute('aria-expanded')!=='true'));
 setContact(false);
+// 소개 칸의 수치는 프로젝트 목록에서 계산한다.
+document.querySelector('#statProjects').textContent=projects.length;document.querySelector('#statLive').textContent=projects.filter(p=>p.live).length;
