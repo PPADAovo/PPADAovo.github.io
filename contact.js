@@ -2,13 +2,12 @@
 // 이메일은 url에 'mailto:주소', text에 화면에 보여 줄 주소를 적는다.
 const contacts=[
 {name:'LinkedIn',url:'https://www.linkedin.com/in/ppada-/'},
-{name:'Instagram',url:'https://www.instagram.com/_ppada/',text:'@_ppada'}
+{name:'Instagram',url:'https://www.instagram.com/_ppada/'},
+{name:'YouTube',url:''}
 ];
-const contactToggle=document.querySelector('.contact-toggle'),contactList=document.querySelector('#contactList');
-contacts.forEach((c,i)=>{const el=document.createElement(c.url?'a':'span');el.className='chan'+(c.url?'':' off');el.style.setProperty('--i',i);el.textContent=c.url?(c.text?`${c.name} · ${c.text}`:c.name):`${c.name} · 준비 중`;if(c.url){el.href=c.url;el.target='_blank';el.rel='noopener noreferrer'}contactList.append(el)});
-function setContact(open){contactToggle.setAttribute('aria-expanded',String(open));contactToggle.textContent=open?'닫기':'연락하기';contactList.classList.toggle('open',open);contactList.inert=!open}
-contactToggle.addEventListener('click',()=>setContact(contactToggle.getAttribute('aria-expanded')!=='true'));
-setContact(false);
+// 연락처는 항상 펼쳐 둔다. 누르면 새 탭에서 해당 주소가 열린다.
+const contactList=document.querySelector('#contactList');
+contacts.forEach((c,i)=>{const el=document.createElement(c.url?'a':'span');el.className='chan'+(c.url?'':' off');el.style.setProperty('--i',i);el.textContent=c.url?c.name:`${c.name} · 준비 중`;if(c.url){el.href=c.url;el.target='_blank';el.rel='noopener noreferrer'}contactList.append(el)});
 // 소개 칸의 수치는 프로젝트 목록에서 계산한다.
 document.querySelector('#statProjects').textContent=projects.length;document.querySelector('#statLive').textContent=projects.filter(p=>p.live).length;
 // 자기소개 칸: items에 ['내용','기간이나 날짜','상세 설명(선택)'] 형태로 적는다. 비어 있는 칸은 화면에 나오지 않는다.

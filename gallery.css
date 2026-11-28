@@ -202,3 +202,33 @@ dialog::backdrop{background:rgba(0,0,0,.45)}
   .hero-cta{flex-wrap:wrap}
 }
 @media(prefers-reduced-motion:reduce){.btn,.cardfoot a,.cardfoot button,.navlinks a{transition:none}}
+
+/* 프로젝트 목록: 바탕 상자를 걷어 내고, 모든 줄이 같은 칸 너비를 쓴다 (사진 · 프로젝트 · 기술 · 상태 · 바로가기) */
+.grid{background:none;border:0;border-radius:0;overflow:visible;border-top:1px solid var(--line)}
+.list-head,.card{grid-template-columns:128px minmax(0,1.6fr) minmax(0,1fr) 104px 200px;gap:24px}
+.list-head{display:grid;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-size:13px;font-weight:600;color:var(--muted)}
+.card{padding:20px 0}
+.card:hover{background:none}
+.card:hover h3{color:var(--blue)}
+.card h3{transition:color .15s}
+.card .tags{font-size:14px}
+.card .badge{display:inline-flex;align-items:center;gap:8px;padding:0;background:none;font-size:14px;color:var(--muted)}
+.card .badge::before{content:'';flex:none;width:8px;height:8px;border-radius:50%;background:#b3bac2}
+.card .badge.live{background:none;color:var(--ink)}
+.card .badge.live::before{background:#23894f}
+.card .cardfoot{display:grid;grid-template-columns:72px minmax(0,1fr);gap:8px}
+.cardfoot button,.cardfoot a{justify-content:center;width:100%;padding:0 8px;white-space:nowrap}
+
+/* 소개 칸: 바탕과 같은 색 */
+.cell{background:var(--bg)}
+
+/* 연락: 항상 펼쳐 둔다 */
+.contact-title{margin:0;font-size:20px}
+.contact-list,.contact-list.open{max-height:none;overflow:visible;margin-top:24px}
+.chan{opacity:1;transform:none;transition:border-color .15s,color .15s}
+
+@media(max-width:800px){
+  .list-head{display:none}
+  .card{grid-template-columns:96px minmax(0,1fr);gap:8px 16px;padding:16px 0}
+  .card .cardfoot{max-width:280px}
+}
