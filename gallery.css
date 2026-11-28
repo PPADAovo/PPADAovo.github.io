@@ -308,25 +308,3 @@ dialog::backdrop{background:rgba(0,0,0,.45)}
   .contact-title{font-size:24px}
 }
 @media(prefers-reduced-motion:reduce){.thumb{transition:none}}
-
-/* ───────── 컨펌 반영 2차 (저장본 "포트폴리오 웹사이트 레이아웃 방향성은? [5부]" 기준) ─────────
-   - 구역 제목은 모두 같은 크기·같은 시작선: 깔아 놓았을 때 통일성이 보여야 한다
-   - 포트폴리오는 평소 웹보다 글자를 크게: 프로젝트 제목 24, 설명 20. 13은 작다
-   - 숫자는 중요한 정보인 경우가 많으니 힘을 뺀 것을 되돌린다
-   - 여유 공간은 가운데로 좁히지 않고, 왼쪽 시작선은 맞춘 채 오른쪽을 비운다 */
-.records h2{font-size:32px}
-.records-row{margin:72px 0 0}
-.card p{font-size:20px;line-height:1.5}
-.card .tags{font-size:16px}
-.card .badge{font-size:16px}
-.meta,footer{font-size:14px}
-.stat strong{font-size:64px;letter-spacing:-2px}
-@media(max-width:800px){
-  .card p,.card:first-of-type p{font-size:16px}
-  .card .tags,.card .badge{font-size:14px}
-  .records-row{margin-top:40px}
-}
-@media(max-width:540px){
-  .records h2{font-size:24px}
-  .stat strong{font-size:48px}
-}
